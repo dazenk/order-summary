@@ -1,0 +1,293 @@
+// Fonts
+@import url('https://fonts.googleapis.com/css2?family=Red+Hat+Display:wght@500;700;900&display=swap');
+
+// Mixins
+@mixin display($j-content: normal, $f-direction: row, $a-items: stretch) {
+    display: flex;
+    flex-direction: $f-direction;
+    justify-content: $j-content;
+    align-items: $a-items;
+}
+
+// Variables
+$pale-blue: hsl(225, 100%, 94%);
+$plan-color: hsl(230, 75%, 98%);
+$bright-blue: hsl(245, 75%, 52%);
+$bright-blue-hover: hsl(245, 83%, 68%);
+$very-pale-blue: hsl(225, 100%, 98%);
+$desaturated-blue: hsl(224, 23%, 55%);
+$dark-blue: hsl(223, 47%, 23%);
+$white: hsl(0, 0%, 100%);
+
+// Styles
+* {
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    min-width: 100vw;
+
+    body {
+        @include display(center, column, center);
+        font-family: 'Red Hat Display', sans-serif;
+        min-height: 100vh;
+        background-image: url("../assets/img/pattern-background-desktop.svg");
+        background-attachment: fixed;
+        background-repeat: no-repeat;
+        background-size: 100% 50%;
+        background-color: $pale-blue;
+        overflow-x: hidden;
+    }
+}
+
+.container {
+    @include display($f-direction: column);
+    margin: 20px 0 20px 0;
+    width: 28rem;
+    height: 43rem;
+
+    .image {
+        width: 100%;
+        height: 32%;
+
+        img {
+            border-radius: 18px 18px 0 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+    }
+
+    .card-body {
+        @include display(space-between, column, center);
+        background-color: $white;
+        border-radius: 0 0 18px 18px;
+        box-sizing: border-box;
+        padding: 45px;
+        width: 100%;
+        height: 69%;
+
+        .text {
+            @include display($f-direction: column, $a-items: center);
+            gap: 12px;
+
+            h1 {
+                color: $dark-blue;
+                font-size: 28px;
+                font-weight: 900;
+            }
+    
+            p {
+                color: $desaturated-blue;
+                text-align: center;
+                line-height: 26px;
+            }
+        }
+
+        .plan {
+            background-color: $plan-color;
+            border-radius: 10px;
+            display: flex;
+            width: 100%;
+            height: 6.2rem;
+
+            .image {
+                @include display($j-content: center, $a-items: center);
+                width: 25%;
+                height: 100%;
+
+                img {
+                    width: 48px;
+                    height: 48px;
+                }
+            }
+
+            .description {
+                @include display($j-content: space-between, $a-items: center);
+                width: 75%;
+
+                .content-1 {
+                    display: flex;
+                    flex-direction: column;
+                    gap: 6px;
+
+                    p {
+                        &:nth-child(1) {
+                            color: $dark-blue;
+                            font-size: 16px;
+                            font-weight: 900;
+                        }
+
+                        &:nth-child(2) {
+                            color: $desaturated-blue;
+                        }
+                    }
+                }
+
+                .link-change {
+                    color: $bright-blue;
+                    font-size: 14px;
+                    font-weight: 700;
+                    margin-right: 25px;
+                    text-decoration: underline;
+                    transition: all 0.2s linear;
+
+                    &:hover {
+                        color: $bright-blue-hover;
+                        text-decoration: none;
+                    }
+                }
+            }
+        }
+
+        button {
+            background-color: $bright-blue;
+            border: none;
+            border-radius: 10px;
+            box-shadow: 0 15px 25px -5px hsl(245deg 75% 85%);
+            color: hsl(0, 0%, 100%);
+            cursor: pointer;
+            font-size: 15px;
+            font-weight: 700;
+            height: 50px;
+            width: 100%;
+            transition: all 0.2s linear;
+
+            &:hover {
+                background-color: $bright-blue-hover;
+            }
+        }
+
+        a {
+            color: $desaturated-blue;
+            cursor: pointer;
+            font-weight: 700;
+            font-size: 15px;
+            transition: all 0.2s linear;
+
+            &:hover {
+                color: $dark-blue;
+            }
+        }
+    }
+}
+
+// Media queries
+@media (max-height: 746px) {
+    .container {
+        width: 25rem;
+        height: 38rem;
+    
+        .card-body {
+            padding: 40px;
+    
+            .text {
+                gap: 10px;
+    
+                h1 {
+                    font-size: 25px;
+                }
+        
+                p {
+                    font-size: 14px;
+                }
+            }
+    
+            .plan {
+                height: 5rem;
+    
+                .image {
+    
+                    img {
+                        width: 44px;
+                        height: 44px;
+                    }
+                }
+    
+                .description {
+    
+                    .content-1 {
+    
+                        p {
+                            &:nth-child(1) {
+                                font-size: 14px;
+                            }
+    
+                            &:nth-child(2) {
+                                font-size: 14px;
+                            }
+                        }
+                    }
+    
+                    .link-change {
+                        font-size: 12px;
+                    }
+                }
+            }
+    
+            button {
+                height: 46px;
+            }
+        }
+    }
+}
+
+@media (max-width: 480px) {
+    .container {
+        width: 22rem;
+        height: 38rem;
+    
+        .card-body {
+            padding: 40px;
+    
+            .text {
+                gap: 10px;
+    
+                h1 {
+                    font-size: 25px;
+                }
+        
+                p {
+                    font-size: 14px;
+                }
+            }
+    
+            .plan {
+                height: 5rem;
+    
+                .image {
+    
+                    img {
+                        width: 42px;
+                        height: 42px;
+                    }
+                }
+    
+                .description {
+    
+                    .content-1 {
+    
+                        p {
+                            &:nth-child(1) {
+                                font-size: 14px;
+                            }
+    
+                            &:nth-child(2) {
+                                font-size: 14px;
+                            }
+                        }
+                    }
+    
+                    .link-change {
+                        font-size: 12px;
+                    }
+                }
+            }
+    
+            button {
+                height: 46px;
+            }
+        }
+    }
+}

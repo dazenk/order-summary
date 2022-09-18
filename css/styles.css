@@ -1,0 +1,226 @@
+@import url("https://fonts.googleapis.com/css2?family=Red+Hat+Display:wght@500;700;900&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  min-width: 100vw;
+}
+html body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-family: "Red Hat Display", sans-serif;
+  min-height: 100vh;
+  background-image: url("../assets/img/pattern-background-desktop.svg");
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  background-size: 100% 50%;
+  background-color: hsl(225deg, 100%, 94%);
+  overflow-x: hidden;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: normal;
+  align-items: stretch;
+  margin: 20px 0 20px 0;
+  width: 28rem;
+  height: 43rem;
+}
+.container .image {
+  width: 100%;
+  height: 32%;
+}
+.container .image img {
+  border-radius: 18px 18px 0 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.container .card-body {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  background-color: hsl(0deg, 0%, 100%);
+  border-radius: 0 0 18px 18px;
+  box-sizing: border-box;
+  padding: 45px;
+  width: 100%;
+  height: 69%;
+}
+.container .card-body .text {
+  display: flex;
+  flex-direction: column;
+  justify-content: normal;
+  align-items: center;
+  gap: 12px;
+}
+.container .card-body .text h1 {
+  color: hsl(223deg, 47%, 23%);
+  font-size: 28px;
+  font-weight: 900;
+}
+.container .card-body .text p {
+  color: hsl(224deg, 23%, 55%);
+  text-align: center;
+  line-height: 26px;
+}
+.container .card-body .plan {
+  background-color: hsl(230deg, 75%, 98%);
+  border-radius: 10px;
+  display: flex;
+  width: 100%;
+  height: 6.2rem;
+}
+.container .card-body .plan .image {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  width: 25%;
+  height: 100%;
+}
+.container .card-body .plan .image img {
+  width: 48px;
+  height: 48px;
+}
+.container .card-body .plan .description {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  width: 75%;
+}
+.container .card-body .plan .description .content-1 {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+.container .card-body .plan .description .content-1 p:nth-child(1) {
+  color: hsl(223deg, 47%, 23%);
+  font-size: 16px;
+  font-weight: 900;
+}
+.container .card-body .plan .description .content-1 p:nth-child(2) {
+  color: hsl(224deg, 23%, 55%);
+}
+.container .card-body .plan .description .link-change {
+  color: hsl(245deg, 75%, 52%);
+  font-size: 14px;
+  font-weight: 700;
+  margin-right: 25px;
+  text-decoration: underline;
+  transition: all 0.2s linear;
+}
+.container .card-body .plan .description .link-change:hover {
+  color: hsl(245deg, 83%, 68%);
+  text-decoration: none;
+}
+.container .card-body button {
+  background-color: hsl(245deg, 75%, 52%);
+  border: none;
+  border-radius: 10px;
+  box-shadow: 0 15px 25px -5px hsl(245deg, 75%, 85%);
+  color: hsl(0deg, 0%, 100%);
+  cursor: pointer;
+  font-size: 15px;
+  font-weight: 700;
+  height: 50px;
+  width: 100%;
+  transition: all 0.2s linear;
+}
+.container .card-body button:hover {
+  background-color: hsl(245deg, 83%, 68%);
+}
+.container .card-body a {
+  color: hsl(224deg, 23%, 55%);
+  cursor: pointer;
+  font-weight: 700;
+  font-size: 15px;
+  transition: all 0.2s linear;
+}
+.container .card-body a:hover {
+  color: hsl(223deg, 47%, 23%);
+}
+
+@media (max-height: 746px) {
+  .container {
+    width: 25rem;
+    height: 38rem;
+  }
+  .container .card-body {
+    padding: 40px;
+  }
+  .container .card-body .text {
+    gap: 10px;
+  }
+  .container .card-body .text h1 {
+    font-size: 25px;
+  }
+  .container .card-body .text p {
+    font-size: 14px;
+  }
+  .container .card-body .plan {
+    height: 5rem;
+  }
+  .container .card-body .plan .image img {
+    width: 44px;
+    height: 44px;
+  }
+  .container .card-body .plan .description .content-1 p:nth-child(1) {
+    font-size: 14px;
+  }
+  .container .card-body .plan .description .content-1 p:nth-child(2) {
+    font-size: 14px;
+  }
+  .container .card-body .plan .description .link-change {
+    font-size: 12px;
+  }
+  .container .card-body button {
+    height: 46px;
+  }
+}
+@media (max-width: 480px) {
+  .container {
+    width: 22rem;
+    height: 38rem;
+  }
+  .container .card-body {
+    padding: 40px;
+  }
+  .container .card-body .text {
+    gap: 10px;
+  }
+  .container .card-body .text h1 {
+    font-size: 25px;
+  }
+  .container .card-body .text p {
+    font-size: 14px;
+  }
+  .container .card-body .plan {
+    height: 5rem;
+  }
+  .container .card-body .plan .image img {
+    width: 42px;
+    height: 42px;
+  }
+  .container .card-body .plan .description .content-1 p:nth-child(1) {
+    font-size: 14px;
+  }
+  .container .card-body .plan .description .content-1 p:nth-child(2) {
+    font-size: 14px;
+  }
+  .container .card-body .plan .description .link-change {
+    font-size: 12px;
+  }
+  .container .card-body button {
+    height: 46px;
+  }
+}
+
+/*# sourceMappingURL=styles.css.map */
